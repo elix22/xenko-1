@@ -26,7 +26,7 @@ namespace Xenko.UI.Tests.Events
         /// <summary>
         /// Performs all the tests
         /// </summary>
-        public void TestAll()
+        internal void TestAll()
         {
             TestAddRemoveHandler();
             TestRaiseEvent();
@@ -307,7 +307,7 @@ namespace Xenko.UI.Tests.Events
 
             ((Button)sender).Click -= TestUnregisterHandlerOnClick;
 
-            if(testUnregisterHandlerCallCount < 10) // avoid infinite looping on test fail
+            if (testUnregisterHandlerCallCount < 10) // avoid infinite looping on test fail
                 ((Button)sender).RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
         }
 
